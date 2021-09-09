@@ -1,0 +1,4 @@
+language: html
+script: mvn clean test
+jdk:
+  - oraclejdk11
