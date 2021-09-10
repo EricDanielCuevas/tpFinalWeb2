@@ -1,5 +1,10 @@
 
 #map{
-    height: 500px;
+    height: 200px;
+    width: 100%;
+}
+
+.fotoIndex{
+    height: 100%;
     width: 100%;
 }
