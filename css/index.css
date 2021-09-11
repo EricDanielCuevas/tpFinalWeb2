@@ -1,3 +1,6 @@
+body{
+    background-color: #cccccc;
+}
 
 #map{
     height: 200px;
@@ -7,4 +10,9 @@
 .fotoIndex{
     height: 100%;
     width: 100%;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
 }
