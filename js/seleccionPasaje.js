@@ -1,3 +1,7 @@
+window.onload = function() {
+    plusSlides(1);
+}
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
