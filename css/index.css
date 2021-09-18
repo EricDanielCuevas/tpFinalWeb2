@@ -22,3 +22,17 @@ footer{
     border-top: 1px;
     border-top-style: solid;
 }
+
+select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 250px;
+}
+
+input {
+    display: inline-block;
+    white-space: pre;
+}
