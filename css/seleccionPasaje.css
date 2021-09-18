@@ -100,3 +100,45 @@ img{
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
+
+/*estilos para la barra navegacion central*/
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 80%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 33%;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+
+  .form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  .form-inline label {
+    margin: 5px 10px 5px 0;
+  }
+}
