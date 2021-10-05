@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3">
+        <meta name="description" content="">
+        <title> Gaucho Rocket S.A. </title>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <script src="js/wow.min.js"></script>
+        <script src="js/index.js"></script>
+      </head>
+
+     <body>
+        <header class= "header">
+            <div class="w3-top">
+                <div class="w3-bar w3-black">
+                    <a href="#" class="w3-bar-item w3-button">Home</a>
+                    <a href="#" class="w3-bar-item w3-button">Nosotros</a>
+                    <a href="#" class="w3-bar-item w3-button">Paseos orbitales</a>
+                    <a href="#" class="w3-bar-item w3-button">Paseos Sub-orbitales</a>
+                    <a href="#" class="w3-bar-item w3-button w3-right" onclick="document.getElementById('id01').style.display='block'">Iniciar Sesión</a>
+                    <a href="registro.html" class="w3-bar-item w3-button w3-right">Registrarse</a>
+                </div>
+              </div>
+        </header>
+        <div class= ""> 
+            <img class="fotoIndex" src="imagenes/Turismo-espacial-scaled.jpeg">
+        </div>
+
+        <div class="w3-row">
+            <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+              <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">VUELOS</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+              <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">CHECK IN</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
+              <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">MI RESERVA</div>
+            </a>
+      </div>
+
+      <div id="London" class="w3-row-padding city w3-section" style="display:none">
+        <select class="w3-select w3-border w3-third" name="partida">
+          <option value="" disabled selected>Partida</option>
+          <option value="1">Buenos Aires</option>
+          <option value="2">Shanghái</option>
+          <option value="3">Ankara</option>
+        </select>
+        <select class="w3-select w3-border w3-third" name="destino">
+          <option value="" disabled selected>Destino</option>
+          <option value="1">Luna</option>
+          <option value="2">Marte</option>
+          <option value="3">Tour</option>
+        </select>
+        <div class="w3-third">
+            <input type="date" id="birthday" name="birthday">
+            <button class="w3-btn w3-black">Buscar Vuelos</button>
+        </div>
+      </div>
+
+      <div id="Paris" class="w3-container city w3-section" style="display:none">
+        <form class="w3-row-padding w3-padding-32">
+            <div class="w3-third">
+                <label>Código de reserva</label>
+                <input class="w3-input w3-border" type="text" placeholder="Ej: XDGUIT">
+            </div>
+
+            <div class="w3-third">
+                <label>Pasajero</label>
+                <input class="w3-input w3-border" type="text" placeholder="Apellido">
+            </div>
+
+            <div class="w3-third">
+                <label style="visibility:hidden">Código de reserva</label>
+                <button class="w3-btn w3-black w3-block">Comenzar Check in</button>
+            </div>
+        </form>
+      </div>
+
+      <div id="Tokyo" class="w3-container city w3-section" style="display:none">
+        <form class="w3-row-padding w3-padding-32">
+            <div class="w3-third">
+                <label>Código de reserva</label>
+                <input class="w3-input w3-border" type="text" placeholder="Ej: XDGUIT">
+            </div>
+
+            <div class="w3-third">
+                <label>Pasajero</label>
+                <input class="w3-input w3-border" type="text" placeholder="Apellido">
+            </div>
+
+            <div class="w3-third">
+                <label style="visibility:hidden">Código de reserva</label>
+                <button class="w3-btn w3-black w3-block">Buscar mi reserva</button>
+            </div>
+        </form>
+      </div>
+
+       <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-top" style="max-width:600px">
+              <div class="w3-center"><br>
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+                <img src="imagenes/user_avatar.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+              </div>
+
+              <form class="w3-container">
+                <div class="w3-section">
+                  <label><b>Email</b></label>
+                  <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="nico@gmail.com" name="email"required>
+                  <label><b>Contraseña</b></label>
+                  <input class="w3-input w3-border" type="password" placeholder="112233" name="psw" required>
+                  <button class="w3-button w3-block w3-black w3-section w3-padding" type="submit" formaction="seleccionPasaje.html">Iniciar sesión</button>
+                </div>
+              </form>
+
+              <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                <span class="w3-right w3-padding w3-hide-small">¿Olvidaste la <a href="#">contraseña?</a></span>
+              </div>
+            </div>
+        </div>
+        <div class="w3-container w3-padding-32 w3-center w3-dark-grey">
+             <h2 class="wow slideInLeft fadeInLeft">¡Nuestros vuelos!</h2>
+             <h5 class="wow slideInLeft fadeInLeft">Elegí a donde volar con nuestras mejores naves</h5>
+             <div class="w3-row-padding wow slideInLeft fadeInLeft">
+                  <div class="w3-third">
+                    <h3>Sub-orbitales</h3>
+                    <img src="imagenes/nave-suborbital.png">
+                    <p>Viajes de corta duración</p>
+                  </div>
+
+                  <div class="w3-third">
+                    <h3>Tour</h3>
+                    <img src="imagenes/turismoespacial_espacio_viajerosespacio_virgin_galactic.jpg">
+                    <p>Reservá el mejor tour pasando por Neptuno</p>
+                  </div>
+
+                  <div class="w3-third">
+                    <h3>Entre destinos</h3>
+                    <img src="imagenes/turismo-espacial.jpg">
+                    <p>Viajá desde la Luna a Marte</p>
+                  </div>
+            </div>
+        </div>
+        <div class="w3-container w3-center w3-dark-grey wow slideInRight fadeInRight">
+             <h2>¡Nuestras mejores naves!</h2>
+             <h5>Cuenta con cabinas super cómodas <br>y los mejores servicios para vivir una experiencia única</h5>
+
+             <div class= "w3-row-padding w3-dark-grey w3-margin-top">
+                <div class="w3-col m6 l6">
+                    <img src="imagenes/cabinas-virgin-galactic-700x467-c.jpg">
+                </div>
+
+                <div class="w3-col m6 l6 w3-center">
+                    <img src="imagenes/cabinas-virgin-galactic-04-700x467-c.jpg">
+                </div>
+            </div>
+        </div>
+         <div class="w3-container w3-padding-32 w3-center w3-dark-grey">
+             <h2>Reserva tu turno para el apto medico.</h2>
+             <h5>Seleccioná entre nuestros 3 centros , fecha y hora para obtener el certificado </h5>
+             <div class="w3-row-padding">
+                  <div class="w3-third wow fadeInUp" data-wow-delay="0.2s">
+                    <h3>Buenos Aires</h3>
+                    <img src="imagenes/centro_medico_4.jpeg">
+                    <p>Hasta 300 turnos diarios</p>
+                  </div>
+
+                  <div class="w3-third wow fadeInUp" data-wow-delay="0.4s">
+                    <h3>Shanghái</h3>
+                    <img src="imagenes/centro_medico_2.jpeg">
+                    <p>Hasta 210 turnos diarios</p>
+                  </div>
+
+                  <div class="w3-third wow fadeInUp" data-wow-delay="0.6s">
+                    <h3>Ankara</h3>
+                    <img src="imagenes/centro_medico_4.jpeg">
+                    <p>Hasta 200 turnos diarios</p>
+                  </div>
+            </div>
+            <div class="w3-padding-32 w3-row-padding">
+                <div class="w3-third">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.3617366924773!2d-58.43788858416025!3d-34.59501326454584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca75c5c37ffb%3A0x8c53f17419f73304!2sCentro%20M%C3%A9dico%20Integral%20Fitz%20Roy!5e0!3m2!1ses-419!2sar!4v1631483441505!5m2!1ses-419!2sar" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+               </div>
+
+               <div class="w3-third">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d154453.93137179237!2d121.46666186064047!3d31.19336800329549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b2eab00c0fb0b5%3A0x8d1587ea6ae227f3!2sShanghai%20Public%20Health%20Clinical%20Center!5e0!3m2!1ses!2sar!4v1631483514848!5m2!1ses!2sar" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+               </div>
+
+               <div class="w3-third">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97899.39964258594!2d32.70967460869823!3d39.93342056683441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34615ca813ed3%3A0xc152885b8fee28b6!2sMETU%20Medical%20Centre!5e0!3m2!1ses!2sar!4v1631483810749!5m2!1ses!2sar" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+               </div>
+             </div>
+         </div>
+
+        <footer class="w3-dark-grey">
+            <div class="w3-row w3-container w3-padding-24 ">
+                <div class="w3-container w3-padding-32 w3-center w3-dark-grey-d2 w3-text-light-grey">
+                    <h5 style="color: #cccccc">Gaucho Rocket S.A.</h5>
+                    <p>
+                        <i class="material-icons w3-margin-right" aria-hidden="true">place</i>
+                        Florencio Varela 1903 (B1754JEC)
+                    </p>
+                    <p>
+                        <i class="material-icons w3-margin-right" aria-hidden="true">place</i>
+                        San Justo, Buenos Aires, Argentina
+                    </p>
+                    <p>
+                      <i class="material-icons w3-margin-right" aria-hidden="true">phone</i>
+                        <a href="tel:+5411 4480-8900">(+54 11) 4480-8900</a>
+                    </p>
+                    <p>
+                        <i class="material-icons w3-margin-right" aria-hidden="true">link</i>
+                        <a href="https://www.unlam.edu.ar">www.unlam.edu.ar</a>
+                    </p>
+                    <p class="redes">
+                        <a target="_blank" href="https://www.facebook.com/UnlamOficial">
+                            <img src="https://miel.unlam.edu.ar/vista/imagenes/home/icono-facebook-32.png" alt="facebook unlam"></a>
+                        <a target="_blank" href="https://twitter.com/UnlamOficial">
+                            <img src="https://miel.unlam.edu.ar/vista/imagenes/home/icono-twitter-32.png" alt="twitter unlam"></a>
+                        <a target="_blank" href="https://www.instagram.com/unlamoficial">
+                            <img src="https://miel.unlam.edu.ar/vista/imagenes/home/icono-instagram-32.png" alt="instagram unlam"></a>
+                    </p>
+                </div>
+        
+            </div>
+        
+            <div class="w3-container w3-padding-32 w3-center w3-dark-grey-d2 w3-text-light-grey">
+                Gaucho Rocket S.A. - Departamento de Ingeniería e Investigaciones Tecnológicas - 2021<br>
+                <a href="mailto:GauchoRocket@unlam.edu.ar">GauchoRocket@unlam.edu.ar</a><br>
+            </div>
+        
+        </footer> 
+        
+        
+    </body>
+
+</html>

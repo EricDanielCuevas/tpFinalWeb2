@@ -27,7 +27,7 @@ echo "<!DOCTYPE html>
                 <img src='imagenes/img-confirm-email.jpeg' alt='confirm email'>
                 <h3>¡Tu cuenta se registró exitosamente!</h3>
                 <h5>Para completar el registro por favor confirma tu email</h5>
-                <a href='validar-hash.php? . $hash'>
+                <a href='validar-hash.php?hash=$hash'>
                     <button class='w3-button w3-padding w3-section w3-black w3-ripple w3-padding'>Validar</button>
                 </a>
             </div>
