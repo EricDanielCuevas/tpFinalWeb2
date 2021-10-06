@@ -22,5 +22,4 @@
     $db->close();
 
     header("Location: validar.php?hash=" . $hash);
-
 ?>
