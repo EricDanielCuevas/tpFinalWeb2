@@ -1,15 +1,11 @@
 <?php
+    include_once "db.php";
+
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
     $telefono = $_POST["telefono"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-
-    $db = new mysqli("localhost", "root", "", "GauchoRocket");
-
-    if ($db->connect_error) {
-        die("Ha ocurrido el error: " . $db->connect_error);
-    }
 
     $hash = md5(time());
 
@@ -22,4 +18,3 @@
     $db->close();
 
     header("Location: validar.php?hash=" . $hash);
-?>

@@ -1,4 +1,5 @@
 <?php
+    include_once "db.php";
 // Empiezo la sesión
 session_start();
 
@@ -8,8 +9,6 @@ $password = $_POST["psw"];
 $_SESSION["email"] = $email;
 $_SESSION["psw"] = $password;
 
-// Conecto a la BD
-$db = new mysqli("localhost", "root", "", "GauchoRocket");
 // Creo la consulta
 $consulta = "SELECT * FROM Usuario WHERE email='$email'and clave = '$password'";
 // Ejecuto un query pasandole por parametro la base de datos y la consulta
