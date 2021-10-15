@@ -1,5 +1,8 @@
 <?php
-    include_once "db.php";
+    // include_once "db.php";
+require_once ("../Model/Conexion.php");
+$config = parse_ini_file("../Helpers/config.ini");
+$database = new Conexion($config["servername"], $config["username"], $config["password"], $config["dbname"]);
 // Empiezo la sesión
 session_start();
 
@@ -12,7 +15,7 @@ $_SESSION["psw"] = $password;
 // Creo la consulta
 $consulta = "SELECT * FROM Usuario WHERE email='$email'and clave = '$password'";
 // Ejecuto un query pasandole por parametro la base de datos y la consulta
-$resultado = mysqli_query($db, $consulta);
+$resultado = mysqli_query($database, $consulta);
 
 // Obtengo el número de filas
 $filas = mysqli_num_rows($resultado);
@@ -25,4 +28,4 @@ if($filas>0){
 // Libera los resultados de la BD para no consumir espacio ni memoria
 mysqli_free_result($resultado);
 // Cierro la conexión de la BD
-mysqli_close($db);
+mysqli_close($database);
