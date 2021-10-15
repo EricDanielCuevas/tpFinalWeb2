@@ -34,3 +34,4 @@ echo "<!DOCTYPE html>
         </main>
     </body>
 </html>";
+?>

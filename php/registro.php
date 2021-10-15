@@ -1,7 +1,7 @@
 <?php
     require_once ("../Model/Conexion.php");
     $config = parse_ini_file("../Helpers/config.ini");
-    $database = new Conexion($config["servername"], $config["username"], $config["password"], $config["dbname"]);
+    $database = new Conexion($config["servername"], $config["username"], $config["password"], $config["dbname"], $config["port"]);
 
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
@@ -10,13 +10,19 @@
     $password = $_POST["password"];
 
     $hash = md5(time());
-
-    $consulta = "INSERT INTO Usuario (nombre, apellido, telefono, email, clave, validar)
-                    VALUES (?, ?, ?, ?, ?, ?)";
-    $command = $database->prepare($consulta);
-    $command->bind_param("ssssss", $nombre, $apellido, $telefono, $email, md5($password), $hash);
-    $command->execute();
-
-    $database->close();
-
+    $registro = $database->queryRegister("INSERT INTO Usuario (nombre, apellido, telefono, email, clave, validar)
+                    VALUES (?, ?, ?, ?, ?, ?)");
     header("Location: validar.php?hash=" . $hash);
+
+//    $hash = md5(time());
+//
+//    $consulta = "INSERT INTO Usuario (nombre, apellido, telefono, email, clave, validar)
+//                    VALUES (?, ?, ?, ?, ?, ?)";
+//    $command = $database->prepare($consulta);
+//    $command->bind_param("ssssss", $nombre, $apellido, $telefono, $email, md5($password), $hash);
+//    $command->execute();
+//
+//     $database->close();
+
+//    header("Location: validar.php?hash=" . $hash);
+?>
