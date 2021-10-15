@@ -51,14 +51,27 @@ class Conexion{
 
     public function queryRegister($consulta){
 
+        $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $telefono = $_POST["telefono"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $hash = md5(time());
+
         $command = $this->db->prepare($consulta);
         $command->bind_param("ssssss", $nombre, $apellido, $telefono, $email, md5($password), $hash);
         $command->execute();
+
+        header("Location: validar.php?hash=" . $hash);
 
         return $consulta;
     }
 
     public function queryValidarHash($consulta){
+
+    $hash = $_GET["hash"];
+
     $command = $this->db->prepare($consulta);
     $command->bind_param("s",  $hash);
     $command->execute();
@@ -73,6 +86,8 @@ class Conexion{
         $command->bind_param("ss",  $validar,$row["clave"]);
         $command->execute();
       }
+    header("Location: ../index.html");
+
     return $consulta;
     }
 }

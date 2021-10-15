@@ -2,17 +2,18 @@
     require_once ("../Model/Conexion.php");
     $config = parse_ini_file("../Helpers/config.ini");
     $database = new Conexion($config["servername"], $config["username"], $config["password"], $config["dbname"], $config["port"]);
-
-    $nombre = $_POST["nombre"];
-    $apellido = $_POST["apellido"];
-    $telefono = $_POST["telefono"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    $hash = md5(time());
     $registro = $database->queryRegister("INSERT INTO Usuario (nombre, apellido, telefono, email, clave, validar)
                     VALUES (?, ?, ?, ?, ?, ?)");
-    header("Location: validar.php?hash=" . $hash);
+
+//    $nombre = $_POST["nombre"];
+//    $apellido = $_POST["apellido"];
+//    $telefono = $_POST["telefono"];
+//    $email = $_POST["email"];
+//    $password = $_POST["password"];
+
+
+
+//    header("Location: validar.php?hash=" . $hash);
 
 //    $hash = md5(time());
 //

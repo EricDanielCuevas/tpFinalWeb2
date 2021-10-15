@@ -1,5 +1,4 @@
 <?php
-    // include_once "db.php";
 require_once ("../Model/Conexion.php");
 $config = parse_ini_file("../Helpers/config.ini");
 $database = new Conexion($config["servername"], $config["username"], $config["password"], $config["dbname"], $config["port"]);

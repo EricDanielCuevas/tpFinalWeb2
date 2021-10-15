@@ -2,11 +2,10 @@
     require_once ("../Model/Conexion.php");
     $config = parse_ini_file("../Helpers/config.ini");
     $database = new Conexion($config["servername"], $config["username"], $config["password"], $config["dbname"], $config["port"]);
-    $hash = $_GET["hash"];
-
+    // $hash = $_GET["hash"];
     $validarHash = $database->queryValidarHash("SELECT * FROM Usuario where validar=?");
 
-    header("Location: ../index.html");
+    // header("Location: ../index.html");
 
 //    $consulta = "SELECT * FROM Usuario where validar=?";
 //    $command = $database->prepare($consulta);
